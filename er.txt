@@ -1,0 +1,65 @@
+dilruba köse
+
+
+Film Tablosu
+
+FilmID (PK)
+Name
+Genre
+Duration
+Year
+Country
+IMDBScore
+Category
+DirectorID (FK)
+Image
+
+
+Actor Tablosu
+
+ActorID (PK)
+Name
+Surname
+Age
+
+
+Director Tablosu
+
+DirectorID (PK)
+Name
+Surname
+Age
+
+
+User Tablosu
+
+UserID (PK)
+Name
+Mail
+Password
+
+
+Watchlist Tablosu
+
+WatchlistID (PK)
+UserID (FK)
+MovieID (FK)
+
+
+Comment Tablosu
+
+CommentID (PK)
+UserID (FK)
+MovieID (FK)
+Text
+Date
+
+İlişkiler:
+
+Film tablosundaki "DirectorID", "Director" tablosundaki "DirectorID" ile ilişkilidir. Yani bir film bir yönetmene aittir.
+
+Film tablosundaki "ActorID", "Actor" tablosundaki "ActorID" ile ilişkilidir. Bir filmde birden çok aktör olabilir, bu nedenle bu ilişki birçoklu (many-to-many) ilişkidir. Bu durumu çözmek için birleştirme tablosu kullanılabilir.
+
+Watchlist tablosundaki "UserID", "User" tablosundaki "UserID" ile ilişkilidir. Bir kullanıcının birden çok filmi izleme listesine ekleyebilir.
+
+Comment tablosundaki "UserID" ve "MovieID", sırasıyla "User" ve "Movie" tablolarındaki "UserID" ve "MovieID" ile ilişkilidir. Bir kullanıcı bir filme birden çok yorum yapabilir.
